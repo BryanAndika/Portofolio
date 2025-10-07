@@ -1,43 +1,157 @@
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            flex direction: row-reverse;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        .project-list {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .project {
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .project:hover {
-            transform: scale(1.1);
-        }
+/* --- Global & Theme --- */
+body {
+    font-family: 'Consolas', 'Roboto Mono', monospace; /* Font monospasi untuk kesan kode */
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Latar belakang gelap */
+    color: #f0f0f0; /* Warna teks terang */
+    line-height: 1.6;
+}
+
+/* --- Header (Code Block) --- */
+header.code-header {
+    background: #282c34; /* Warna header lebih gelap (seperti terminal) */
+    color: white;
+    padding: 20px 50px 0;
+    text-align: left;
+    min-height: 200px;
+    position: relative;
+    padding-top: 50px;
+}
+
+/* Styling Code Block */
+.code-block {
+    font-size: 1.1em;
+    padding-bottom: 20px;
+}
+
+.line-num {
+    color: #555; /* Warna nomor baris abu-abu */
+    margin-right: 15px;
+    user-select: none;
+}
+
+/* JSON Syntax Highlighting */
+.json-key {
+    color: #9cdcfe; /* Warna biru muda untuk key */
+}
+.json-string {
+    color: #ce9178; /* Warna oranye untuk string/value */
+}
+.json-boolean {
+    color: #569cd6; /* Warna biru untuk boolean/number */
+}
+
+/* Navigation Over Header */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #61dafb; /* Aksen warna terang saat hover */
+}
+
+/* --- Project Section Styling --- */
+section {
+    padding: 60px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #f0f0f0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column; /* Mengatur item project menjadi tumpukan */
+    gap: 40px;
+}
+
+/* Styling Project Card (Menggantikan Blog Post) */
+.project-card {
+    background: #242424; /* Latar belakang project card sedikit lebih terang */
+    padding: 30px;
+    border-left: 5px solid #61dafb; /* Garis aksen di samping */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+.project-card:hover {
+    background: #2a2a2a; /* Efek hover */
+}
+
+.project-card .date {
+    font-size: 0.8em;
+    color: #aaa;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: #fff;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    header.code-header {
+        padding: 20px 20px 0;
+        text-align: center;
+        min-height: auto;
+    }
+    nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 10px;
+    }
+    nav ul {
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    section {
+        padding: 40px 20px;
+    }
+    .code-block {
+        font-size: 0.9em;
+        text-align: left;
+    }
+}

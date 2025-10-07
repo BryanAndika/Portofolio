@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+    <title>Bryan Andika Saputra - Portfolio</title>
 </head>
 <body>
-    <header>
-        <h1>Bryan Andika Saputra</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm a web developer passionate about creating amazing websites.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <div class="project">Project 1</div>
-            <div class="project">Project 2</div>
-            <div class="project">Project 3</div>
+
+<header class="code-header">
+    <div class="code-block">
+        <span class="line-num">1</span>{<br>
+        <span class="line-num">2</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-string">"Bryan Andika Saputra"</span>,<br>
+        <span class="line-num">3</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-string">"Junior QA Automation Engineer"</span>,<br>
+        <span class="line-num">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"skills"</span>: [<span class="json-string">"Java"</span>, <span class="json-string">"Selenium"</span>, <span class="json-string">"RestAssured"</span>],<br>
+        <span class="line-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="json-key">"status"</span>: <span class="json-boolean">true</span><br>
+        <span class="line-num">6</span>}<br>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="projects">
+    <h2>Projects Showcase</h2>
+
+    <div class="project-list">
+
+        <div class="project-card">
+            <span class="date">7 Oct 2025</span>
+            <h3>Final Project Jayjay</h3>
+            <p>Implementasi framework otomatisasi End-to-End menggunakan Java dan Gherkin. Meliputi pengujian alur kritis Web UI (DemoBlaze) dan operasi CRUD API (DummyAPI.io).</p>
+            <a href="#">See more...</a>
         </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: example@example.com</p>
-    </section>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const projects = document.querySelectorAll(".project");
-            projects.forEach(project => {
-                project.addEventListener("click", () => {
-                    alert("More details coming soon!");
-                });
-            });
-        });
-    </script>
+
+        <div class="project-card">
+            <span class="date">28 Sep 2025</span>
+            <h3>CI/CD Integration using GitHub Actions</h3>
+            <p>Konfigurasi workflow CI untuk menjalankan test API dan Web UI secara otomatis pada setiap Pull Request. Memastikan proses testing terintegrasi dalam alur development.</p>
+            <a href="#">See more...</a>
+        </div>
+
+    </div>
+</section>
+
 </body>
 </html>
