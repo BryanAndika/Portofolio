@@ -155,3 +155,262 @@ section h2 {
         text-align: left;
     }
 }
+
+/* Container untuk gambar yang bisa digeser */
+.carousel-container {
+    display: flex; /* Untuk menempatkan item sejajar */
+    overflow-x: scroll; /* Aktifkan scroll horizontal */
+    width: 100%; /* Atur lebar container (misalnya 80% dari halaman) */
+    max-width: 1000px;
+    margin: 40px auto; /* Tengah di halaman */
+
+    /* PROPERTY KUNCI: Membuat scroll berhenti tepat di item */
+    scroll-snap-type: x mandatory;
+
+    /* Sembunyikan scrollbar bawaan browser (Opsional, untuk tampilan yang lebih bersih) */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Menyembunyikan scrollbar di Chrome/Safari */
+.carousel-container::-webkit-scrollbar {
+    display: true;
+}
+
+/* Setiap Item Carousel */
+.carousel-item {
+    flex: 0 0 100%; /* KUNCI: Setiap item mengambil 100% lebar container */
+    scroll-snap-align: center; /* Item akan berhenti (snap) di tengah viewport */
+
+    /* Pastikan tinggi item disesuaikan dengan tinggi gambar */
+    height: auto;
+    margin-right: 10px; /* Jarak antar gambar */
+}
+
+/* Styling Gambar */
+.carousel-item img {
+    width: 100%; /* Gambar mengisi penuh item container */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Container pembungkus tombol dan carousel */
+.slider-wrapper {
+    position: relative; /* Kunci: Agar tombol bisa diposisikan secara absolut di dalamnya */
+    width: 80%; /* Sesuaikan lebar sesuai kebutuhan Anda */
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Tombol Navigasi */
+.nav-btn {
+    position: absolute;
+    top: 50%; /* Posisikan vertikal di tengah */
+    transform: translateY(-50%); /* Geser ke atas setengah tinggi tombol */
+
+    background: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10; /* Pastikan tombol di atas gambar */
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#prev-btn {
+    left: -60px; /* Jarak tombol dari sisi kiri wrapper */
+}
+
+#next-btn {
+    right: -60px; /* Jarak tombol dari sisi kanan wrapper */
+}
+
+/* Modifikasi Carousel Container agar tombol terlihat */
+.carousel-container {
+    /* (Pertahankan semua properti Scroll Snap di sini) */
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 100%; /* Penting: gunakan 100% dari slider-wrapper */
+
+}
+
+/* [Tambahkan media query jika tombol terlalu jauh di mobile] */
+@media (max-width: 768px) {
+    #prev-btn { left: 10px; } /* Dekatkan tombol agar masuk layar */
+    #next-btn { right: 10px; }
+}
+
+/* --- Project Details Section --- */
+#project-details {
+    padding-top: 20px;
+    padding-bottom: 80px;
+    text-align: left; /* Teks deskripsi lebih enak dibaca jika rata kiri */
+}
+
+#project-details h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.description-intro {
+    font-size: 1.1em;
+    color: #ccc;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* Container untuk kolom 2x */
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Penting untuk responsif */
+}
+
+.details-block {
+    flex: 1; /* Setiap blok mengambil ruang yang sama */
+    min-width: 300px; /* Lebar minimum agar tidak terlalu sempit */
+}
+
+.details-block h3 {
+    color: #61dafb; /* Aksen warna terang */
+    border-bottom: 1px solid rgba(97, 218, 251, 0.3);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.details-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details-block ul li {
+    background: #242424;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #ddd;
+}
+
+.details-block ul li a {
+    color: #ce9178; /* Warna oranye/string untuk URL */
+}
+
+/* Styling Code Block Run */
+.code-run {
+    background: #282c34;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.code-run p {
+    margin: 5px 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+.code-run code {
+    color: #569cd6; /* Biru muda */
+    font-weight: bold;
+}
+
+.report-link {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .details-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .details-block {
+        min-width: 100%;
+    }
+}
+/* Github
+/* --- GitHub Call to Action Styling --- */
+.github-cta {
+    text-align: center; /* Posisikan tombol di tengah */
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.github-button {
+    display: inline-block;
+    background: #61dafb; /* Warna aksen utama (biru terang) */
+    color: #282c34; /* Warna teks gelap */
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(97, 218, 251, 0.3);
+}
+
+.github-button:hover {
+    background: #3ac0e2; /* Sedikit lebih gelap saat di-hover */
+    transform: translateY(-2px); /* Efek terangkat */
+    box-shadow: 0 6px 12px rgba(97, 218, 251, 0.5);
+}
+/* --- Footer Styling --- */
+.main-footer {
+    background: #282c34; /* Warna gelap header/terminal */
+    color: #a0a0a0;
+    padding: 30px 20px 20px;
+    text-align: center;
+    border-top: 1px solid #3a3a3a;
+    font-family: 'Roboto Mono', monospace;
+}
+/* Container Utama (untuk mengatur latar belakang dan padding) */
+.footer-container {
+    background-color: #282c34; /* Latar belakang gelap seperti di gambar */
+    color: #abb2bf; /* Warna teks umum (abu-abu muda) */
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Consolas', 'Courier New', monospace; /* Font bergaya coding */
+}
+
+/* Penataan Tautan Sosial */
+.social-links {
+    margin-bottom: 15px;
+}
+
+.link-item {
+    color: #61afef; /* Warna default untuk tautan (biru cerah) */
+    text-decoration: none; /* Hilangkan garis bawah default */
+    font-size: 16px;
+    padding: 0 10px; /* Jarak antar tautan */
+    transition: color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+/* Hover effect */
+.link-item:hover {
+    color: #98c379; /* Ubah warna saat kursor di atasnya */
+}
+
+/* Warna spesifik untuk beberapa tautan */
+.link-item.whatsapp {
+    color: #c678dd; /* Warna ungu untuk Whatsapp */
+}
+
+/* Teks Copyright */
+.copyright-text {
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: 1px;
+}
